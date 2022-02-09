@@ -4,7 +4,7 @@
     <b-row style="height: 100vh">
       <b-col class="cookieArea">
         <b-row style="height: 20vh">
-            <div class="cookieCount text-center">{{Math.floor($store.state.game.points)}} Cookies<br>{{$store.state.game.cps}} per second</div>
+            <div class="cookieCount text-center text-white"> <span style="opacity: 1">{{Math.floor($store.state.game.points)}} Farts<br>{{$store.state.game.cps}} per second </span></div>
 
         </b-row>
         <b-row>
@@ -14,7 +14,9 @@
 
       </b-col>
       <b-col><b-button @click="cps">cps</b-button></b-col>
-      <b-col></b-col>
+      <b-col>
+        <BuyItems></BuyItems>
+      </b-col>
     </b-row>
       <img @click="click($event)" id="poop" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Poop_Emoji_7b204f05-eec6-4496-91b1-351acc03d2c7_grande.png?v=1571606036" style="display:none; width: 3vw;" alt="no">
   </b-container>
@@ -22,9 +24,13 @@
 
 <script>
 // @ is an alias to /src
+import BuyItems from "../components/BuyItems";
 
 export default {
   name: 'Home',
+  components: {
+    BuyItems
+  },
   data() {
     return {
       img: 'https://www.transparentpng.com/thumb/unicorn/K38WQ1-rainbow-unicorn-clouds-and-stars-shirt-for-sale.png'

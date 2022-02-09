@@ -7,7 +7,10 @@ Vue.use(Vuex)
 const game = {
   state: {
     points: 0,
-    cps: 0
+    cps: 0,
+    unicorns: [
+      {img: 'https://tiermaker.com/images/chart/chart/unicorn-emoji-70263/unicorn-face1f984-2png', name:'Unicorn', price: 2, amount: 0, cps: 1}
+    ]
   },
   mutations: {
     earnPoints(state, payload){
@@ -15,7 +18,15 @@ const game = {
     },
     addCps(state, payload) {
       state.cps += payload.amount
+    },
+    addPrice(state, payload) {
+      state.unicorns[payload.index].price += payload.price
+    },
+    addUnicorn(state, payload) {
+      state.unicorns[payload.index].amount += payload.amount
     }
+  },
+  actions: {
   }
 }
 
